@@ -57,9 +57,9 @@ param-file “Format of the resulting picture”: SVG
 param-file “Output options”: Image
 ![download](https://user-images.githubusercontent.com/88290959/129894215-48c2fd25-65ae-44bf-9409-15925f485b0f.jpg)
 
-##  post-processing
+##  Post-processing (@karthika)
 
 After the Clustering & Fingerprinting  of the molecules, from our collection of SD-files, we first extract all stored values into tabular format and then combine the files together to create a single tabular file. 
-
+![Screenshot (348)](https://user-images.githubusercontent.com/71928132/129946613-e92603c7-28de-4083-b844-c36bd88d7bf7.png)
 
 We have a tabular file available now which contains all poses calculated for all ligands docked, together with scores and RMSD values for the deviation of each pose from the optimum. We also have PDB files for some of the docking poses which can be inspected using the NGLViewer visualization embedded in Galaxy.
