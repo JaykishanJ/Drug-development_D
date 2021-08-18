@@ -41,7 +41,7 @@ The ligand SMILES files was labelled using Replace and Concatenate tools which g
 
 The labelled compound library was used to do fingerprinting using Babel FP2 fingerprints and it was renamed as "Fingerprints".
 
-## Cluster molecules using molecular fingerprint
+## Cluster molecules using molecular fingerprint (@kerishnee)
 This method can be completed once the molecular fingerprints have been determined.
 For this step, two different tools, Taylor-Butina clustering and NxN clustering, were used to cluster molecules. 
 Taylor-Butina clustering was used to determine the different classification of moelcules into clusters based on the similarity within their structures.
