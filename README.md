@@ -4,6 +4,8 @@
 
 
 ## Generate compound library-Jaykishan 
+![Compound Library](https://user-images.githubusercontent.com/86801284/129846114-5d9afd3a-923b-4964-b705-3d1361e89c78.PNG)
+
 we have used two tools to generate librairy of compounds 
 frist we need a SMILE notation as reference in oder to get a similar compound. 
 ### Compound conversion 
