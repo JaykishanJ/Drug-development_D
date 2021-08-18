@@ -21,7 +21,19 @@ it used to give output as list of SMILE in file so our library is ready now for 
 
 ## Docking
 
-## Visualisation
+## Visualisation-Geepee
+![Galaxy70- Visualisation_on_data_6](https://user-images.githubusercontent.com/88286597/129873861-b2fdadb9-52c9-4346-aad4-fcf1c7d1a1aa.png)
+
+Here, we used a tool - **Visualization of Compounds** - availabe on Galaxy based on OpenBabel to visualize the chemical structures of the compounds generated. The inputs of the parameters used are as listed:
+*“Molecular input file”: **Compound library**
+*“Embed molecule as CML”: **No**
+*“Draw all carbon atoms”: **No**
+*“Use thicker lines”: **No**
+*“Property to display under the molecule”: **Molecule weight**
+*“Sort the displayed molecules by”: **Molecular weight**
+*Format of the resultant picture”*: **SVG**
+
+Upon executing these command inputs, the outcome was as shown in the picture above.
 
 ## Calculate molecular fingerprints
 
