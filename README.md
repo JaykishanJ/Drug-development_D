@@ -19,7 +19,19 @@ it used to give output as list of SMILE in file so our library is ready now for 
 
 ## Preparing files for docking-Mahfuz
 
-## Docking
+## Docking-stephanie
+![Dockingresult](https://user-images.githubusercontent.com/88290150/129882431-18a5d81e-1dc2-4863-8fad-f6e83eb82c54.PNG)
+
+Docking is a method which predicts the preferred orientation of a protein to a ligand when bound to each other to form a stable complex.
+Here, we used **VINA dOcking**. The inputs of parameters used are as follows:
+"Recptor": **Protein PDBQT**
+"Ligand": **Prepare ligand**
+"Specify pH value for ligand protonation": **7.4**
+"Specify parameters": **config**
+"Box configuration": **Docking config**
+"Exhaustiveness": **Blank**
+
+Upon excution, the output was as shown as the image above
 
 ## Visualisation-Isaac Godspower(@GeePee)
 ![Galaxy70- Visualisation_on_data_6](https://user-images.githubusercontent.com/88286597/129873861-b2fdadb9-52c9-4346-aad4-fcf1c7d1a1aa.png)
