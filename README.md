@@ -21,7 +21,7 @@ it used to give output as list of SMILE in file so our library is ready now for 
 
 ## Docking
 
-## Visualisation-Geepee
+## Visualisation-Isaac Godspower(@GeePee)
 ![Galaxy70- Visualisation_on_data_6](https://user-images.githubusercontent.com/88286597/129873861-b2fdadb9-52c9-4346-aad4-fcf1c7d1a1aa.png)
 
 Here, we used a tool - **Visualization of Compounds** - availabe on Galaxy based on OpenBabel to visualize the chemical structures of the compounds generated. The inputs of the parameters used are as listed:
