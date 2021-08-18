@@ -64,3 +64,7 @@ After the Clustering & Fingerprinting  of the molecules, from our collection of 
 ![Screenshot (349)](https://user-images.githubusercontent.com/71928132/129947028-f28cdbd2-6ed6-4a1e-9b49-52465e4a5303.png)
 
 We have a tabular file available now which contains all poses calculated for all ligands docked, together with scores and RMSD values for the deviation of each pose from the optimum. We also have PDB files for some of the docking poses which can be inspected using the NGLViewer visualization embedded in Galaxy.
+
+This is the visualization for one molecule :
+
+![Screenshot (351)](https://user-images.githubusercontent.com/71928132/129947410-ae096104-ce6e-4712-82f6-2d605c622dcf.png)
