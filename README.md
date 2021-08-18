@@ -48,6 +48,9 @@ Here, we used a tool - **Visualization of Compounds** - availabe on Galaxy based
 Upon executing these command inputs, the outcome was as shown in the picture above.
 
 ## Calculate molecular fingerprints (@WumiAO, @kheira)
+The ligand SMILES files was labelled using Replace and Concatenate tools which give us 14 molecules with a clear table, the output was renamed as "Labelled compound library"
+
+The labelled compound library was used to do fingerprinting using Babel FP2 fingerprints and it was renamed as "Fingerprints".
 
 ## Cluster molecules using molecular fingerprint
 
