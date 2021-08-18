@@ -18,8 +18,6 @@ it used to give output as list of SMILE in file so our library is ready now for 
 
 
 ## Preparing files for docking-Mahfuz
-We need to prepare our receptor and ligands for docking study. For our receptor preparation we used **Prepare receptor** tool. Our PDB file was used and then the tool converted it into PDBQT format. We changed the file name into 'Protein PDBQT'. We also need to change the ligands format also. In previous step we found 13 compound from "Search ChEMBL database" but it was in .smi format. For multiple ligands we need to change the format to SDF. To do that, we used **Compound conversion** tool and it gave us the compound library in SDF format. We renamed it to "Prepared ligands". Now we have our prepared receptor and ligands also. We need to create a config file for docking. **Calculate the box parameters using RDKit** tool was used for creating our docking config file. The x,y,z-axis buffer was set to 5.0, Exhaustiveness = 1 and Random seed parameter box was left empty. The config file later renamed to "Docking config file". We now have all the files for our docking process.
-
 
 ## Docking
 
@@ -37,7 +35,7 @@ Here, we used a tool - **Visualization of Compounds** - availabe on Galaxy based
 
 Upon executing these command inputs, the outcome was as shown in the picture above.
 
-## Calculate molecular fingerprints
+## Calculate molecular fingerprints (@WumiAO, @kheira)
 
 ## Cluster molecules using molecular fingerprint
 
