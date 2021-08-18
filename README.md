@@ -40,6 +40,7 @@ Upon executing these command inputs, the outcome was as shown in the picture abo
 The ligand SMILES files was labelled using Replace and Concatenate tools which give us 14 molecules with a clear table, the output was renamed as "Labelled compound library"
 
 The labelled compound library was used to do fingerprinting using Babel FP2 fingerprints and it was renamed as "Fingerprints".
+
 ## Cluster molecules using molecular fingerprint
 This method can be completed once the molecular fingerprints have been determined.
 For this step, two different tools, Taylor-Butina clustering and NxN clustering, were used to cluster molecules. 
