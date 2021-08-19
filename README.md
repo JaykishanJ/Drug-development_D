@@ -1,14 +1,10 @@
 <h1 align="center"> Welcome to Team Drug_Development_D, HackBio 2021 </h1>
-![hackbio](https://user-images.githubusercontent.com/88226429/130088021-0244bd16-6273-4c29-84f0-111aa98100f6.jpg)
+![image](https://user-images.githubusercontent.com/88287648/128190365-2beca13a-9c53-41b0-83cc-185ae3d8a43c.png)
  
 ## HackBio Internship:
   HackBio Internship is a virtually regimented 5-week research internship that is practice oriented and focused on equipping scientists around the world with advanced bioinformatics and  computational biology skills. Our team consists of 12 budding researches eager to get a hands-on training on drug development and we present you our work.
  
-#< ![group icon](https://user-images.githubusercontent.com/88226429/130090269-3d61ee43-8072-42e1-b43b-6e3e1b688a9f.jpg) alt = "contributors" width = "30" height = "30" /> </a> Contents
-  * [Getting Started](#getting-started) 
-
 ## Slack User_Name | Contribution |
------------- | ------------- |
 @Madhu (leader) | Getting data and separating protein and ligands |
 @Jay | Creating CHEMBL compound library |
 @Hellrider | Prepare files for docking |
@@ -23,18 +19,18 @@
 @Hammed | Visualisation of docking |
 
 ## Contents
-*[Introduction](#Introduction)
-*[Workflow](#Workflow)
-*[Get Data](#Get-Data)
-*[Separate protein and ligand](#Separate-protein-and-ligand)
-*[Create compound library](#Create-compound-library)
-*[Prepare files for Docking](#Prepare-files-for-Docking)
-*[Docking](#Docking)
-*[Visualisation of Compound library](#Visualisation-of-compound-library)
-*[Calculate Molecular fingerprints](#Calculate-Molecular-fingerprints)
-*[Clustering](#Clustering)
-*[Post-processing](#Post-processing)
-*[Visualtion of docking](#Visualisation-of-docking)
+*[Introduction](#Introduction)\
+*[Workflow](#Workflow)\
+*[Get Data](#Get-Data)\
+*[Separate protein and ligand](#Separate-protein-and-ligand)\
+*[Create compound library](#Create-compound-library)\
+*[Prepare files for Docking](#Prepare-files-for-Docking)\
+*[Docking](#Docking)\
+*[Visualisation of Compound library](#Visualisation-of-compound-library)\
+*[Calculate Molecular fingerprints](#Calculate-Molecular-fingerprints)\
+*[Clustering](#Clustering)\
+*[Post-processing](#Post-processing)\
+*[Visualtion of docking](#Visualisation-of-docking)\
 
 ## Introduction
 
