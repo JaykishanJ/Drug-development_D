@@ -1,4 +1,43 @@
-# Drug Development_D
+<h1 align="center"> Welcome to Team Drug_Development_D, HackBio 2021 </h1>
+ ![hackbio](https://user-images.githubusercontent.com/88226429/130087749-ca61d8e1-2386-45aa-92ad-3d4d3a5896a1.jpg)
+ 
+## HackBio Internship:
+  HackBio Internship is a virtually regimented 5-week research internship that is practice oriented and focused on equipping scientists around the world with advanced bioinformatics and  computational biology skills. Our team consists of 12 budding researches eager to get a hands-on training on drug development and we present you our work.
+ 
+## Contributors
+Slack User_Name | Contribution |
+------------ | ------------- |
+@Madhu (leader) | Getting data and separating protein and ligands |
+@Jay | Creating CHEMBL compound library |
+@Hellrider | Prepare files for docking |
+@StephanieEzzy | Docking |
+@GeePee | Visualisation of compound library |
+@WumiAO | Molecular fingerprints |
+@kheira | Molecular fingerprints |
+@Kerishnee | Clustering |
+@Tifee_ | Post-processing |
+@karthika | Post-processing |
+@Rita | Visualisation of docking |
+@Hammed | Visualisation of docking |
+
+## Contents
+*[Introduction]
+*[Workflow]
+*[Get Data]
+*[Separate protein and ligand]
+*[Create compound library]
+*[Prepare files for Docking]
+*[Docking]
+*[Visualisation of Compound library]
+*[Calculate Molecular fingerprints]
+*[Cluster using molecular fingerprints]
+*[Post-processing]
+*[Visualtion of docking]
+
+## Introduction
+
+## Workflow
+![workflow](https://user-images.githubusercontent.com/88226429/130087629-9321bbd8-9e48-4ab3-b1b4-afa67f71228a.png)
 
 ## Get data and Separate protein and ligand-Madhumitha  
 
