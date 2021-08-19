@@ -1,5 +1,5 @@
 <h1 align="center"> Welcome to Team Drug_Development_D, HackBio 2021 </h1>
-![hackbio](https://user-images.githubusercontent.com/88226429/130092503-c08b384d-c818-4bbb-87b4-73ea4096ea1f.jpg)
+![Picture1](https://user-images.githubusercontent.com/88226429/130103618-9e0f9331-1954-46d8-8011-de56a9f5609b.jpg)
 
 ## HackBio Internship:
   HackBio Internship is a virtually regimented 5-week research internship that is practice oriented and focused on equipping scientists around the world with advanced bioinformatics and  computational biology skills. Our team consists of 12 budding researches eager to get a hands-on training on drug development and we present you our work.
@@ -34,9 +34,12 @@ Slack User_Name | Contribution |
 *[Visualtion of docking](#Visualisation-of-docking)
 
 ## Introduction
+Computer Aided Drug Design focuses on development of potential compounds against a target based on several biological and physicochemical properties. This project is centered around protein-ligand docking, a molecular modelling technique. The goal of protein–ligand docking is to predict the position and orientation of a ligand when it is bound to a protein receptor or enzyme. It is similar to finding the best key to a lock when you have a bag full of keys.
 
 ## Workflow
 ![Picture1](https://user-images.githubusercontent.com/88226429/130089845-a71a5677-7093-4f99-a9e1-bbf79a299023.png)
+## Tools used
+![tool flowchart](https://user-images.githubusercontent.com/88226429/130112151-bcb8764a-22ef-46e2-82b8-a4b565b7c0cf.png)
 
 ## Get data 
 
