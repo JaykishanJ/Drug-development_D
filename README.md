@@ -57,7 +57,7 @@ param-file “Format of the resulting picture”: SVG
 param-file “Output options”: Image
 ![download](https://user-images.githubusercontent.com/88290959/129894215-48c2fd25-65ae-44bf-9409-15925f485b0f.jpg)
 
-##  Post-processing (karthika)
+##  Post-processing (@karthika and @tifee_)
 
 After the Clustering & Fingerprinting  of the molecules, from our collection of SD-files, we first extract all stored values into tabular format and then combine the files together to create a single tabular file. 
 
