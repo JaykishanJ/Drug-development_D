@@ -1,11 +1,13 @@
 <h1 align="center"> Welcome to Team Drug_Development_D, HackBio 2021 </h1>
- ![hackbio](https://user-images.githubusercontent.com/88226429/130087749-ca61d8e1-2386-45aa-92ad-3d4d3a5896a1.jpg)
+![hackbio](https://user-images.githubusercontent.com/88226429/130088021-0244bd16-6273-4c29-84f0-111aa98100f6.jpg)
  
 ## HackBio Internship:
   HackBio Internship is a virtually regimented 5-week research internship that is practice oriented and focused on equipping scientists around the world with advanced bioinformatics and  computational biology skills. Our team consists of 12 budding researches eager to get a hands-on training on drug development and we present you our work.
  
-## Contributors
-Slack User_Name | Contribution |
+#< ![group icon](https://user-images.githubusercontent.com/88226429/130090269-3d61ee43-8072-42e1-b43b-6e3e1b688a9f.jpg) alt = "contributors" width = "30" height = "30" /> </a> Contents
+  * [Getting Started](#getting-started) 
+
+## Slack User_Name | Contribution |
 ------------ | ------------- |
 @Madhu (leader) | Getting data and separating protein and ligands |
 @Jay | Creating CHEMBL compound library |
@@ -21,28 +23,29 @@ Slack User_Name | Contribution |
 @Hammed | Visualisation of docking |
 
 ## Contents
-*[Introduction]
-*[Workflow]
-*[Get Data]
-*[Separate protein and ligand]
-*[Create compound library]
-*[Prepare files for Docking]
-*[Docking]
-*[Visualisation of Compound library]
-*[Calculate Molecular fingerprints]
-*[Cluster using molecular fingerprints]
-*[Post-processing]
-*[Visualtion of docking]
+*[Introduction](#Introduction)
+*[Workflow](#Workflow)
+*[Get Data](#Get-Data)
+*[Separate protein and ligand](#Separate-protein-and-ligand)
+*[Create compound library](#Create-compound-library)
+*[Prepare files for Docking](#Prepare-files-for-Docking)
+*[Docking](#Docking)
+*[Visualisation of Compound library](#Visualisation-of-compound-library)
+*[Calculate Molecular fingerprints](#Calculate-Molecular-fingerprints)
+*[Clustering](#Clustering)
+*[Post-processing](#Post-processing)
+*[Visualtion of docking](#Visualisation-of-docking)
 
 ## Introduction
 
 ## Workflow
-![workflow](https://user-images.githubusercontent.com/88226429/130087629-9321bbd8-9e48-4ab3-b1b4-afa67f71228a.png)
+![Picture1](https://user-images.githubusercontent.com/88226429/130089845-a71a5677-7093-4f99-a9e1-bbf79a299023.png)
 
-## Get data and Separate protein and ligand-Madhumitha  
+## Get data 
 
+## Separate protein and ligand
 
-## Generate compound library-Jaykishan 
+## Create compound library
 ![Compound Library](https://user-images.githubusercontent.com/86801284/129846114-5d9afd3a-923b-4964-b705-3d1361e89c78.PNG)
 
 we have used two tools to generate librairy of compounds 
@@ -56,11 +59,11 @@ this used to perform similarity search, with available compound in chEMBL databa
 it used to give output as list of SMILE in file so our library is ready now for next step 
 
 
-## Preparing files for docking-Mahfuz
+## Preparing files for Docking
 
 ## Docking
 
-## Visualisation-Isaac Godspower(@GeePee)
+## Visualisation of Compound library
 ![Galaxy70- Visualisation_on_data_6](https://user-images.githubusercontent.com/88286597/129873861-b2fdadb9-52c9-4346-aad4-fcf1c7d1a1aa.png)
 
 Here, we used a tool - **Visualization of Compounds** - availabe on Galaxy based on OpenBabel to visualize the chemical structures of the compounds generated. The inputs of the parameters used are as listed:
@@ -74,13 +77,13 @@ Here, we used a tool - **Visualization of Compounds** - availabe on Galaxy based
 
 Upon executing these command inputs, the outcome was as shown in the picture above.
 
-## Calculate molecular fingerprints (@WumiAO, @kheira)
+## Calculate molecular fingerprints
 
 The ligand SMILES files was labelled using Replace and Concatenate tools which give us 14 molecules with a clear table, the output was renamed as "Labelled compound library"
 
 The labelled compound library was used to do fingerprinting using Babel FP2 fingerprints and it was renamed as "Fingerprints".
 
-## Cluster molecules using molecular fingerprint (@kerishnee)
+## Clustering
 This method can be completed once the molecular fingerprints have been determined.
 For this step, two different tools, Taylor-Butina clustering and NxN clustering, were used to cluster molecules. 
 Taylor-Butina clustering was used to determine the different classification of moelcules into clusters based on the similarity within their structures.
@@ -96,7 +99,7 @@ param-file “Format of the resulting picture”: SVG
 param-file “Output options”: Image
 ![download](https://user-images.githubusercontent.com/88290959/129894215-48c2fd25-65ae-44bf-9409-15925f485b0f.jpg)
 
-##  Post-processing (@karthika and @tifee_)
+##  Post-processing
 
 After the Clustering & Fingerprinting  of the molecules, from our collection of SD-files, we first extract all stored values into tabular format and then combine the files together to create a single tabular file. 
 
@@ -104,6 +107,4 @@ After the Clustering & Fingerprinting  of the molecules, from our collection of 
 
 We have a tabular file available now which contains all poses calculated for all ligands docked, together with scores and RMSD values for the deviation of each pose from the optimum. We also have PDB files for some of the docking poses which can be inspected using the NGLViewer visualization embedded in Galaxy.
 
-This is the visualization for one molecule :
-
-![Screenshot (351)](https://user-images.githubusercontent.com/71928132/129947410-ae096104-ce6e-4712-82f6-2d605c622dcf.png)
+## Visualisation of Docking
