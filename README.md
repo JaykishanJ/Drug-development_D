@@ -1,11 +1,11 @@
 <h1 align="center"> Welcome to Team Drug_Development_D, HackBio 2021 </h1>
-<img src = "https://www.google.co.in/url?sa=i&url=https%3A%2F%2Fng.linkedin.com%2Fcompany%2Fhackbio&psig=AOvVaw2FFYC-OooobrqCYldDzFBg&ust=1629471453825000&source=images&cd=vfe&ved=0CAsQjRxqFwoTCIie76usvfICFQAAAAAdAAAAABAD">
- 
+![hackbio](https://user-images.githubusercontent.com/88226429/130092503-c08b384d-c818-4bbb-87b4-73ea4096ea1f.jpg)
+
 ## HackBio Internship:
   HackBio Internship is a virtually regimented 5-week research internship that is practice oriented and focused on equipping scientists around the world with advanced bioinformatics and  computational biology skills. Our team consists of 12 budding researches eager to get a hands-on training on drug development and we present you our work.
  
-## Slack User_Name | Contribution |
-------------- | -------------- |
+Slack User_Name | Contribution |
+--------------- | -------------- |
 @Madhu (leader) | Getting data and separating protein and ligands |
 @Jay | Creating CHEMBL compound library |
 @Hellrider | Prepare files for docking |
