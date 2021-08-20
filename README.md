@@ -43,9 +43,9 @@ Slack User_Name | Contribution |
 ◾ [Calculate Molecular fingerprints](#Calculate-Molecular-fingerprints)\
 ◾ [Clustering](#Clustering)\
 ◾ [Post-processing](#Post-processing)\
-◾ [Visualtion of docking](#Visualisation-of-docking)
-◾ [Tutorial Reference](#Tutorial-Reference)
-◾ [Ak=cknowledgement](#Acknowledgement)
+◾ [Visualtion of docking](#Visualisation-of-docking)  
+◾ [Tutorial Reference](#Tutorial-Reference)  
+◾ [Acknowledgement](#Acknowledgement)
 
 ---
 
@@ -76,7 +76,7 @@ Note that the protein and ligand are bound together
 
 ## Separate protein and ligand
 🛠️**Search in textfiles (grep)** \
-🔺 To get protein: Remove **HETATM** atoms (HETATM contains ligand atoms, water molecules, ions which are not part of the protein) 
+🔺 To get protein: Remove **HETATM** atoms (HETATM contains ligand atoms, water molecules, ions which are not part of the protein)   
 🔺 To get ligand: Choose only **CT5** atoms (CT5 denotes the ligand atoms - you can see they come under HETATM atoms)  
 
 🛠️**Compound conversion** \
@@ -102,8 +102,10 @@ This involves pre-processing steps to make sure our protein and ligand are in th
 \
 🛠️**Prepare receptor:** \
 To convert our protein to PDBQT format \
+
 🛠️**Compound conversion:** \
 To convert our Compound library from SMI format to **SDF** format. Now our prepared ligands are ready to dock! \
+
 🛠️**Calculate the box parameters for an AutoDock Vina job:** \
 Docking requires the coordinates of a binding site to be defined. In our case, we already know the location of the binding site, since the downloaded PDB structure (Hsp90 structre) contained a bound ligand. Therefore using this we automatically create a configuration file for docking with the known ligand coordinates
 
@@ -131,11 +133,13 @@ We input our 'Compound library' file and set parameters depending on how we want
 The molecular fingerprint is a way to describe a molecular structure by converting it into a bit string. Since molecular fingerprint encodes the structure of a molecule, it is a useful method to describe the structural similarity among the molecules as a molecular descriptor. \
 🛠️**Replace:** \
 This tool is used to replace the data format pathway in the Ligand SMILES file to 'Ligand' in title column. This is done for proper ordering and representation of the file in a tabular column. \
+
 🛠️**Concatenate datasets:** \
 This toll is used to combine our Compound library and ligand file (prepared in previous step) into a single tabular column. Therefore, now our tabular column consists of: \
 **Columns(2):** SMILES and Title (Ligand/ChEMBL ID) \
 **Rows(14):** Primary ligand file (1) + Compound library molecules (13) \
 Now Rename the output file as **'Labelled Compound Library'** \
+
 🛠️**Molecules to Fingerprints:** \
 Now use the 'Labelled Compound Library' file to create the fingerprints. The type of fingerprint done here is Open Babel FP2 fingerprints.
 
@@ -143,6 +147,7 @@ Now use the 'Labelled Compound Library' file to create the fingerprints. The typ
 
 ## Clustering
 Clustering of data forms the basis of many modeling and pattern classification algorithms. The purpose of clustering is to find natural groupings of data in a large data set. In this case, the bitstrings (fingerprints) obtained in previous step is compared using clustering method.  
+
 🛠️**Taylor-Butina clustering:**  
 Also referred to as Leader clustering, Taylor-Butina clustering is an unsupervised non-hierarchical clustering method that guarantees that every cluster contains molecules which are within a distance cutoff of the central molecule. It provides a classification of the compounds into different groups or clusters, based on their structural similarity.  
 A **threshold** of 0.8 was used and 2 clusters were obtained
@@ -158,6 +163,7 @@ Output is produced in the form of an image.
 As we are dont with Docking, let us now analyse our docking results.  
 🛠️**Extract values from an SD-file:**
 From our collection of SD-files (docking result), we first extract all stored values into tabular format for each of the 13 ligands in the Compound library. The tabular column consists of significant values such Docking score and RMSD values.  
+
 🛠️**Collapse Collection:**  
 Using this tool we combine all the 13 tables obtained above into one single file. This helps in easier organisation and  visualisation.  
 ![Screenshot (349)](https://user-images.githubusercontent.com/71928132/129947028-f28cdbd2-6ed6-4a1e-9b49-52465e4a5303.png)  
@@ -168,6 +174,7 @@ We now have a tabular file which contains all poses calculated for all ligands d
 ## Visualisation of Docking  
 🛠️**Compound conversion:**  
 Taking the Sd-files obtained from docking, we convert it to PDB format. This is done so that the docking poses can be inspected during Visualisation.  
+
 🛠️**Visualisation:**  
 We have used NGLViewer for visualisation of our docking files.  
 ![hsp90](https://user-images.githubusercontent.com/88226429/130185591-88ccb726-47ae-4d51-8d06-86a8476b61a3.png)  
