@@ -1,4 +1,5 @@
 <h1 align="center"> Welcome to Team Drug_Development_D, HackBio 2021 </h1>
+![hackbio](https://user-images.githubusercontent.com/88226429/130214425-522d208f-a748-4265-bb9b-fe6187abc967.jpg)
 
 ## HackBio Internship:
   HackBio Internship is a virtually regimented 5-week research internship that is practice oriented and focused on equipping scientists around the world with advanced bioinformatics and  computational biology skills. Our team consists of 12 budding researches eager to get a hands-on training on drug development and we present you our work.
@@ -57,7 +58,7 @@ Computer Aided Drug Design focuses on development of potential compounds against
 ![poster](https://user-images.githubusercontent.com/88226429/130165702-e2dca6c4-3c28-4500-8e1f-94b24a2b5077.png)
 
 🛠️ **Tools used** (Galaxy)
-![tool flowchart](https://user-images.githubusercontent.com/88226429/130165714-391f931e-ddab-4b18-ac5d-2ab700ab5c43.png)
+![tool flowchart](https://user-images.githubusercontent.com/88226429/130213303-898fd277-6e10-43ed-8644-254a19ac5755.png)
 
 ---
 
@@ -72,7 +73,7 @@ To start with our work, do the following:
 
 ## Get data 
 🛠️**Get PDB** \
-Using the accession code [2brc](https://www.rcsb.org/structure/2BRC) we get the structure of Hsp90 in PDB format
+Using the accession code [2brc](https://www.rcsb.org/structure/2BRC) we get the structure of Hsp90 in PDB format  
 Note that the protein and ligand are bound together
 
 ## Separate protein and ligand
@@ -91,8 +92,8 @@ With the SMILES of the ligand we collected in the before step, we now search for
 We filter using the following parameters \
 **Tanimoto coefficient:** 40 \
 **Lipinski's Rule of Five:** Yes \
-![lipinski](https://user-images.githubusercontent.com/88226429/130173895-0aa2e2b9-a2b0-4932-b038-921e68143ccd.png)
-\
+![lipinski](https://user-images.githubusercontent.com/88226429/130173895-0aa2e2b9-a2b0-4932-b038-921e68143ccd.png)  
+
 📚**The Compound library created had the following compounds:** 
 ![compound library](https://user-images.githubusercontent.com/88226429/130173936-dd2c7426-f014-4ae2-affd-5fa93b58ab78.png)
 
@@ -101,7 +102,7 @@ We filter using the following parameters \
 ## Prepare files for Docking
 This involves pre-processing steps to make sure our protein and ligand are in the right format to dock in AutoDock Vina docking tool
 \
-🛠️**Prepare receptor:** \
+🛠️**Prepare receptor:**  
 To convert our protein to PDBQT format \
 
 🛠️**Compound conversion:** \
@@ -113,7 +114,8 @@ Docking requires the coordinates of a binding site to be defined. In our case, w
 ---
 
 ## Docking
-Now we will be finding the right key to our lock! We try to find the **best fit** for our target by performing docking \
+Now we will be finding the right key to our lock! We try to find the **best fit** for our target by performing docking  
+
 🛠️**VINA docking:** \
 By giving our inputs of protein (PDBQT) and prepared ligands, we execute docking with the defined box configuration done in before step
 ![docking](https://user-images.githubusercontent.com/88226429/130176285-d8194f0e-9688-4fe0-8f78-375a36266c1c.png)
@@ -122,7 +124,8 @@ We get output in the form of collection of SDF files
 ---
 
 ## Visualisation of Compound library
-Do you wish to see how are compound library actually looks like? Here you go, we heard your words! \
+Do you wish to see how are compound library actually looks like? Here you go, we heard your words!  
+
 🛠️**Visualization of Compounds:** \
 This tool is based on OpenBabel to visualise the chemical structures of the compounds generated. \
 We input our 'Compound library' file and set parameters depending on how we want to visualise the compounds. In this case, we decide to see the structure of the molecule and display it's molecular weight. We can get the output in SVG or PNG format.
@@ -131,7 +134,9 @@ We input our 'Compound library' file and set parameters depending on how we want
 ---
 
 ## Calculate Molecular fingerprints
-The molecular fingerprint is a way to describe a molecular structure by converting it into a bit string. Since molecular fingerprint encodes the structure of a molecule, it is a useful method to describe the structural similarity among the molecules as a molecular descriptor. \
+The molecular fingerprint is a way to describe a molecular structure by converting it into a bit string. Since molecular fingerprint encodes the structure of a molecule, it is a useful method to describe the structural similarity among the molecules as a molecular descriptor.  
+![molecular fingerprint](https://user-images.githubusercontent.com/88226429/130214323-b11d69ad-c200-4581-8bee-ffa2b821d675.jpg)  
+
 🛠️**Replace:** \
 This tool is used to replace the data format pathway in the Ligand SMILES file to 'Ligand' in title column. This is done for proper ordering and representation of the file in a tabular column. \
 
@@ -153,6 +158,7 @@ Clustering of data forms the basis of many modeling and pattern classification a
 Also referred to as Leader clustering, Taylor-Butina clustering is an unsupervised non-hierarchical clustering method that guarantees that every cluster contains molecules which are within a distance cutoff of the central molecule. It provides a classification of the compounds into different groups or clusters, based on their structural similarity.  
 A **threshold** of 0.8 was used and 2 clusters were obtained
 ![taylor-butina clustering](https://user-images.githubusercontent.com/88226429/130183032-553dc8b8-2929-48bc-8ec6-6f2f15695169.jpg)  
+
 🛠️**NxN Clustering:**  
  NxN clustering shows the clustering in the form of a dendrogram, where individual molecules are represented as vertical lines and merged into clusters. Merges are represented by horizontal lines. The y-axis represents the similarity of data points to each other; thus, the lower a cluster is merged, the more similar the data points are which it contains. Clusters in the dendogram are colored differently. For example, all molecules connected in red are similar enough to be grouped into the same cluster.  
 Output is produced in the form of an image.
@@ -162,6 +168,7 @@ Output is produced in the form of an image.
 
 ##  Post-processing
 As we are dont with Docking, let us now analyse our docking results.  
+
 🛠️**Extract values from an SD-file:**
 From our collection of SD-files (docking result), we first extract all stored values into tabular format for each of the 13 ligands in the Compound library. The tabular column consists of significant values such Docking score and RMSD values.  
 
@@ -175,10 +182,12 @@ We now have a tabular file which contains all poses calculated for all ligands d
 ## Visualisation of Docking  
 🛠️**Compound conversion:**  
 Taking the Sd-files obtained from docking, we convert it to PDB format. This is done so that the docking poses can be inspected during Visualisation.  
+![ligand pose](https://user-images.githubusercontent.com/88226429/130212889-e9fb1d5e-4f6f-45d4-b73a-15520726d586.png)  
 
 🛠️**Visualisation:**  
-We have used NGLViewer for visualisation of our docking files.  
-![hsp90](https://user-images.githubusercontent.com/88226429/130185591-88ccb726-47ae-4d51-8d06-86a8476b61a3.png)  
+We have used NGLViewer for visualisation of our docking files. The following image shows the best ligand pose and docking score for ligands CHEMBL399530 and CHEMBL575729  
+![docked ligands](https://user-images.githubusercontent.com/88226429/130216130-ee1eb6e7-3b29-4f14-b0cc-856d7fe4fad6.png)  
+
 
 🛠️**Scatter plot**  
 A scatter plot is a type of plot or mathematical diagram using Cartesian coordinates to display values for typically two variables for a set of data. If the variables are correlated, the points will fall along a line or curve. A scatter plot of RMSD (compared to optimal docking pose) against docking score is calculated below:  
