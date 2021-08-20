@@ -75,7 +75,8 @@ Note that the protein and ligand are bound together
 ## Separate protein and ligand
 🛠️**Search in textfiles (grep)** \
 1. To get protein: Remove **HETATM** atoms (HETATM contains ligand atoms, water molecules, ions which are not part of the protein) 
-2. To get ligand: Choose only **CT5** atoms (CT5 denotes the ligand atoms - you can see they come under HETATM atoms) \
+2. To get ligand: Choose only **CT5** atoms (CT5 denotes the ligand atoms - you can see they come under HETATM atoms)
+\
 🛠️**Compound conversion** \
 To convert Ligand from PDB format to **MOL** format and also to **SMILES** format
 
@@ -88,6 +89,7 @@ We filter using the following parameters \
 **Tanimoto coefficient:** 40 \
 **Lipinski's Rule of Five:** Yes \
 ![lipinski](https://user-images.githubusercontent.com/88226429/130173895-0aa2e2b9-a2b0-4932-b038-921e68143ccd.png)
+\
 📚**The Compound library created had the following compounds:** 
 ![compound library](https://user-images.githubusercontent.com/88226429/130173936-dd2c7426-f014-4ae2-affd-5fa93b58ab78.png)
 
@@ -95,17 +97,18 @@ We filter using the following parameters \
 
 ## Preparing files for Docking
 This involves pre-processing steps to make sure our protein and ligand are in the right format to dock in AutoDock Vina docking tool
+\
 🛠️**Prepare receptor:** \
-To convert our protein to PDBQT format
+To convert our protein to PDBQT format \
 🛠️**Compound conversion:** \
-To convert our Compound library from SMI format to **SDF** format. Now our prepared ligands are ready to dock!
+To convert our Compound library from SMI format to **SDF** format. Now our prepared ligands are ready to dock! \
 🛠️**Calculate the box parameters for an AutoDock Vina job:** \
 Docking requires the coordinates of a binding site to be defined. In our case, we already know the location of the binding site, since the downloaded PDB structure (Hsp90 structre) contained a bound ligand. Therefore using this we automatically create a configuration file for docking with the known ligand coordinates
 
 ---
 
 ## Docking
-Now we will be finding the right key to our lock! We try to find the **best fit** for our target by performing docking
+Now we will be finding the right key to our lock! We try to find the **best fit** for our target by performing docking \
 🛠️**VINA docking:** \
 By giving our inputs of protein (PDBQT) and prepared ligands, we execute docking with the defined box configuration done in before step
 ![docking](https://user-images.githubusercontent.com/88226429/130176285-d8194f0e-9688-4fe0-8f78-375a36266c1c.png)
@@ -114,8 +117,8 @@ We get output in the form of collection of SDF files
 ---
 
 ## Visualisation of Compound library
-Do you wish to see how are compound library actually looks like? Here you go, we heard your words!
-🛠️**Visualization of Compounds**
+Do you wish to see how are compound library actually looks like? Here you go, we heard your words! \
+🛠️**Visualization of Compounds** \
 This tool is based on OpenBabel to visualise the chemical structures of the compounds generated. \
 We input our 'Compound library' file and set parameters depending on how we want to visualise the compounds. In this case, we decide to see the structure of the molecule and display it's molecular weight. We can get the output in SVG or PNG format.
 ![visualisation](https://user-images.githubusercontent.com/88226429/130177042-3337c6e4-f6ec-4ceb-b216-ac8923796d55.png)
@@ -127,6 +130,8 @@ We input our 'Compound library' file and set parameters depending on how we want
 The ligand SMILES files was labelled using Replace and Concatenate tools which give us 14 molecules with a clear table, the output was renamed as "Labelled compound library"
 
 The labelled compound library was used to do fingerprinting using Babel FP2 fingerprints and it was renamed as "Fingerprints".
+
+---
 
 ## Clustering
 This method can be completed once the molecular fingerprints have been determined.
@@ -144,6 +149,8 @@ param-file “Format of the resulting picture”: SVG
 param-file “Output options”: Image
 ![download](https://user-images.githubusercontent.com/88290959/129894215-48c2fd25-65ae-44bf-9409-15925f485b0f.jpg)
 
+---
+
 ##  Post-processing
 
 After the Clustering & Fingerprinting  of the molecules, from our collection of SD-files, we first extract all stored values into tabular format and then combine the files together to create a single tabular file. 
@@ -151,5 +158,7 @@ After the Clustering & Fingerprinting  of the molecules, from our collection of 
 ![Screenshot (349)](https://user-images.githubusercontent.com/71928132/129947028-f28cdbd2-6ed6-4a1e-9b49-52465e4a5303.png)
 
 We have a tabular file available now which contains all poses calculated for all ligands docked, together with scores and RMSD values for the deviation of each pose from the optimum. We also have PDB files for some of the docking poses which can be inspected using the NGLViewer visualization embedded in Galaxy.
+
+---
 
 ## Visualisation of Docking
