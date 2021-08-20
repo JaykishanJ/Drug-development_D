@@ -30,27 +30,27 @@ Slack User_Name | Contribution |
 
 ---
 
-📝 **Contents**
-◾ *[Introduction](#Introduction)\
-◾ *[Workflow](#Workflow)\
-◾ *[Getting started with Galaxy](#Getting-started-with-Galaxy)
-◾ *[Get Data](#Get-Data)\
-◾ *[Separate protein and ligand](#Separate-protein-and-ligand)\
-◾ *[Create compound library](#Create-compound-library)\
-◾ *[Prepare files for Docking](#Prepare-files-for-Docking)\
-◾ *[Docking](#Docking)\
-◾ *[Visualisation of Compound library](#Visualisation-of-compound-library)\
-◾ *[Calculate Molecular fingerprints](#Calculate-Molecular-fingerprints)\
-◾ *[Clustering](#Clustering)\
-◾ *[Post-processing](#Post-processing)\
-◾ *[Visualtion of docking](#Visualisation-of-docking)
+## Contents 📝
+◾ [Introduction](#Introduction)\
+◾ [Workflow](#Workflow)\
+◾ [Getting started with Galaxy](#Getting-started-with-Galaxy)\
+◾ [Get Data](#Get-Data)\
+◾ [Separate protein and ligand](#Separate-protein-and-ligand)\
+◾ [Create compound library](#Create-compound-library)\
+◾ [Prepare files for Docking](#Prepare-files-for-Docking)\
+◾ [Docking](#Docking)\
+◾ [Visualisation of Compound library](#Visualisation-of-compound-library)\
+◾ [Calculate Molecular fingerprints](#Calculate-Molecular-fingerprints)\
+◾ [Clustering](#Clustering)\
+◾ [Post-processing](#Post-processing)\
+◾ [Visualtion of docking](#Visualisation-of-docking)
 
 ---
 
-💊 **Introduction**
+## Introduction 💊
 Computer Aided Drug Design focuses on development of potential compounds against a target based on several biological and physicochemical properties. This project is centered around protein-ligand docking, a molecular modelling technique. The goal of protein–ligand docking is to predict the position and orientation of a ligand when it is bound to a protein receptor or enzyme. It is similar to finding the best key (🔑) to a lock (🔒) when you have a bag full of keys.
 
-⚙️ **Workflow**
+## Workflow
 ![poster](https://user-images.githubusercontent.com/88226429/130165702-e2dca6c4-3c28-4500-8e1f-94b24a2b5077.png)
 
 🛠️ **Tools used** (Galaxy)
@@ -68,48 +68,59 @@ To start with our work, do the following:
 <h1 align="center">Let's go!</h1>
 
 ## Get data 
-🛠️**Get PDB**
+🛠️**Get PDB** \
 Using the accession code [2brc](https://www.rcsb.org/structure/2BRC) we get the structure of Hsp90 in PDB format
 Note that the protein and ligand are bound together
 
 ## Separate protein and ligand
-🛠️**Search in textfiles (grep)**
+🛠️**Search in textfiles (grep)** \
 1. To get protein: Remove **HETATM** atoms (HETATM contains ligand atoms, water molecules, ions which are not part of the protein) 
-2. To get ligand: Choose only **CT5** atoms (CT5 denotes the ligand atoms - you can see they come under HETATM atoms)
-🛠️**Compound conversion**
+2. To get ligand: Choose only **CT5** atoms (CT5 denotes the ligand atoms - you can see they come under HETATM atoms) \
+🛠️**Compound conversion** \
 To convert Ligand from PDB format to **MOL** format and also to **SMILES** format
 
 ---
 
 ## Create compound library
-🛠️**Search ChEMBL database**
+🛠️**Search ChEMBL database** \
 With the SMILES of the ligand we collected in the before step, we now search for similar compounds based on SMILES in the ChEMBL Database.
-We filter using the following parameters:
-**Tanimoto coefficient:** 40
-**Lipinski's Rule of Five:** Yes
-![lipinski](https://user-images.githubusercontent.com/88226429/130171208-702d7c00-301f-4701-bebe-d29f9cc50ca7.png)
-#### The Compound library created had the following compounds: 
-![compound library](https://user-images.githubusercontent.com/88226429/130171630-46958778-540a-4236-9177-5d382184535d.png)
+We filter using the following parameters \
+**Tanimoto coefficient:** 40 \
+**Lipinski's Rule of Five:** Yes \
+![lipinski](https://user-images.githubusercontent.com/88226429/130173895-0aa2e2b9-a2b0-4932-b038-921e68143ccd.png)
+📚**The Compound library created had the following compounds:** 
+![compound library](https://user-images.githubusercontent.com/88226429/130173936-dd2c7426-f014-4ae2-affd-5fa93b58ab78.png)
 
 ---
 
 ## Preparing files for Docking
+This involves pre-processing steps to make sure our protein and ligand are in the right format to dock in AutoDock Vina docking tool
+🛠️**Prepare receptor:** \
+To convert our protein to PDBQT format
+🛠️**Compound conversion:** \
+To convert our Compound library from SMI format to **SDF** format. Now our prepared ligands are ready to dock!
+🛠️**Calculate the box parameters for an AutoDock Vina job:** \
+Docking requires the coordinates of a binding site to be defined. In our case, we already know the location of the binding site, since the downloaded PDB structure (Hsp90 structre) contained a bound ligand. Therefore using this we automatically create a configuration file for docking with the known ligand coordinates
+
+---
 
 ## Docking
+Now we will be finding the right key to our lock! We try to find the **best fit** for our target by performing docking
+🛠️**VINA docking:** \
+By giving our inputs of protein (PDBQT) and prepared ligands, we execute docking with the defined box configuration done in before step
+![docking](https://user-images.githubusercontent.com/88226429/130176285-d8194f0e-9688-4fe0-8f78-375a36266c1c.png)
+We get output in the form of collection of SDF files
+
+---
 
 ## Visualisation of Compound library
-![Galaxy70- Visualisation_on_data_6](https://user-images.githubusercontent.com/88286597/129873861-b2fdadb9-52c9-4346-aad4-fcf1c7d1a1aa.png)
+Do you wish to see how are compound library actually looks like? Here you go, we heard your words!
+🛠️**Visualization of Compounds**
+This tool is based on OpenBabel to visualise the chemical structures of the compounds generated. \
+We input our 'Compound library' file and set parameters depending on how we want to visualise the compounds. In this case, we decide to see the structure of the molecule and display it's molecular weight. We can get the output in SVG or PNG format.
+![visualisation](https://user-images.githubusercontent.com/88226429/130177042-3337c6e4-f6ec-4ceb-b216-ac8923796d55.png)
 
-Here, we used a tool - **Visualization of Compounds** - availabe on Galaxy based on OpenBabel to visualize the chemical structures of the compounds generated. The inputs of the parameters used are as listed:
-*“Molecular input file”: **Compound library**
-*“Embed molecule as CML”: **No**
-*“Draw all carbon atoms”: **No**
-*“Use thicker lines”: **No**
-*“Property to display under the molecule”: **Molecule weight**
-*“Sort the displayed molecules by”: **Molecular weight**
-*Format of the resultant picture”*: **SVG**
-
-Upon executing these command inputs, the outcome was as shown in the picture above.
+---
 
 ## Calculate molecular fingerprints
 
