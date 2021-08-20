@@ -15,7 +15,7 @@
  
 Slack User_Name | Contribution |
 --------------- | -------------- |
-@Madhu (leader) | Getting data and separating protein and ligands |
+@Madhu (leader) | Getting data and separating protein and ligands, Scatter plot (post-processing) |
 @Jay | Creating CHEMBL compound library |
 @Hellrider | Prepare files for docking |
 @StephanieEzzy | Docking |
@@ -45,6 +45,7 @@ Slack User_Name | Contribution |
 ◾ [Post-processing](#Post-processing)\
 ◾ [Visualtion of docking](#Visualisation-of-docking)  
 ◾ [Tutorial Reference](#Tutorial-Reference)  
+◾ [Link for our work](#link-for-our-work)  
 ◾ [Acknowledgement](#Acknowledgement)
 
 ---
@@ -179,10 +180,17 @@ Taking the Sd-files obtained from docking, we convert it to PDB format. This is 
 We have used NGLViewer for visualisation of our docking files.  
 ![hsp90](https://user-images.githubusercontent.com/88226429/130185591-88ccb726-47ae-4d51-8d06-86a8476b61a3.png)  
 
+🛠️**Scatter plot**  
+A scatter plot is a type of plot or mathematical diagram using Cartesian coordinates to display values for typically two variables for a set of data. If the variables are correlated, the points will fall along a line or curve. A scatter plot of RMSD (compared to optimal docking pose) against docking score is calculated below:  
+![scatter plot](https://user-images.githubusercontent.com/88226429/130188979-5254961b-f1f3-48b9-aaf0-79f6f6233672.png)
+
 ---
 
 ## Tutorial Reference
 https://galaxyproject.github.io/training-material/topics/computational-chemistry/tutorials/cheminformatics/tutorial.html
+
+## Link for our work  
+https://usegalaxy.eu/u/madhumitha_5/h/protein-ligand-docking-by-team-drugdevelopmentd  
 
 ## Acknowledgement
 We are grateful to Hackbio as they gave us this wonderful opportunity and let us dive into the ocean of bioinformatics.  
