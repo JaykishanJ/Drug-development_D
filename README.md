@@ -1,8 +1,17 @@
 <h1 align="center"> Welcome to Team Drug_Development_D, HackBio 2021 </h1>
-![Picture1](https://user-images.githubusercontent.com/88226429/130103618-9e0f9331-1954-46d8-8011-de56a9f5609b.jpg)
 
 ## HackBio Internship:
   HackBio Internship is a virtually regimented 5-week research internship that is practice oriented and focused on equipping scientists around the world with advanced bioinformatics and  computational biology skills. Our team consists of 12 budding researches eager to get a hands-on training on drug development and we present you our work.
+
+*To know more about HackBio*
+<a href="https://twitter.com/TheHackbio?s=08" target="blank"><img align="center" src="http://assets.stickpng.com/images/580b57fcd9996e24bc43c53e.png" alt="tbi_internship" height="30" width="30" /></a>
+<a href="https://thehackbio.com/" target="blank"><img align="center" src="https://pbs.twimg.com/profile_images/1274819410814029824/dAaLhOpD_400x400.jpg" alt="HackBioWebsite" height="30" width="30" /></a>
+<a href="https://www.linkedin.com/company/hackbio" target="blank"><img align="center" src="https://www.freeiconspng.com/thumbs/linkedin-logo-png/linkedin-logo-3.png" alt="linkedin" height="20" width="20" /></a>
+</p>
+
+---
+  
+ 👥 **Contributors**
  
 Slack User_Name | Contribution |
 --------------- | -------------- |
@@ -19,45 +28,70 @@ Slack User_Name | Contribution |
 @Rita | Visualisation of docking |
 @Hammed | Visualisation of docking |
 
-## Contents
-*[Introduction](#Introduction)\
-*[Workflow](#Workflow)\
-*[Get Data](#Get-Data)\
-*[Separate protein and ligand](#Separate-protein-and-ligand)\
-*[Create compound library](#Create-compound-library)\
-*[Prepare files for Docking](#Prepare-files-for-Docking)\
-*[Docking](#Docking)\
-*[Visualisation of Compound library](#Visualisation-of-compound-library)\
-*[Calculate Molecular fingerprints](#Calculate-Molecular-fingerprints)\
-*[Clustering](#Clustering)\
-*[Post-processing](#Post-processing)\
-*[Visualtion of docking](#Visualisation-of-docking)
+---
 
-## Introduction
-Computer Aided Drug Design focuses on development of potential compounds against a target based on several biological and physicochemical properties. This project is centered around protein-ligand docking, a molecular modelling technique. The goal of protein–ligand docking is to predict the position and orientation of a ligand when it is bound to a protein receptor or enzyme. It is similar to finding the best key to a lock when you have a bag full of keys.
+📝 **Contents**
+◾ *[Introduction](#Introduction)\
+◾ *[Workflow](#Workflow)\
+◾ *[Getting started with Galaxy](#Getting-started-with-Galaxy)
+◾ *[Get Data](#Get-Data)\
+◾ *[Separate protein and ligand](#Separate-protein-and-ligand)\
+◾ *[Create compound library](#Create-compound-library)\
+◾ *[Prepare files for Docking](#Prepare-files-for-Docking)\
+◾ *[Docking](#Docking)\
+◾ *[Visualisation of Compound library](#Visualisation-of-compound-library)\
+◾ *[Calculate Molecular fingerprints](#Calculate-Molecular-fingerprints)\
+◾ *[Clustering](#Clustering)\
+◾ *[Post-processing](#Post-processing)\
+◾ *[Visualtion of docking](#Visualisation-of-docking)
 
-## Workflow
-![Picture1](https://user-images.githubusercontent.com/88226429/130089845-a71a5677-7093-4f99-a9e1-bbf79a299023.png)
-## Tools used
-![tool flowchart](https://user-images.githubusercontent.com/88226429/130112151-bcb8764a-22ef-46e2-82b8-a4b565b7c0cf.png)
+---
+
+💊 **Introduction**
+Computer Aided Drug Design focuses on development of potential compounds against a target based on several biological and physicochemical properties. This project is centered around protein-ligand docking, a molecular modelling technique. The goal of protein–ligand docking is to predict the position and orientation of a ligand when it is bound to a protein receptor or enzyme. It is similar to finding the best key (🔑) to a lock (🔒) when you have a bag full of keys.
+
+⚙️ **Workflow**
+![poster](https://user-images.githubusercontent.com/88226429/130165702-e2dca6c4-3c28-4500-8e1f-94b24a2b5077.png)
+
+🛠️ **Tools used** (Galaxy)
+![tool flowchart](https://user-images.githubusercontent.com/88226429/130165714-391f931e-ddab-4b18-ac5d-2ab700ab5c43.png)
+
+---
+
+## Getting started with Galaxy
+Galaxy is an open, web-based platform for accessible, reproducible, and transparent computational research. 
+To start with our work, do the following:
+1. Create a galaxy account - https://usegalaxy.eu/
+2. Create a new history
+
+---
+<h1 align="center">Let's go!</h1>
 
 ## Get data 
+🛠️**Get PDB**
+Using the accession code [2brc](https://www.rcsb.org/structure/2BRC) we get the structure of Hsp90 in PDB format
+Note that the protein and ligand are bound together
 
 ## Separate protein and ligand
+🛠️**Search in textfiles (grep)**
+1. To get protein: Remove **HETATM** atoms (HETATM contains ligand atoms, water molecules, ions which are not part of the protein) 
+2. To get ligand: Choose only **CT5** atoms (CT5 denotes the ligand atoms - you can see they come under HETATM atoms)
+🛠️**Compound conversion**
+To convert Ligand from PDB format to **MOL** format and also to **SMILES** format
+
+---
 
 ## Create compound library
-![Compound Library](https://user-images.githubusercontent.com/86801284/129846114-5d9afd3a-923b-4964-b705-3d1361e89c78.PNG)
+🛠️**Search ChEMBL database**
+With the SMILES of the ligand we collected in the before step, we now search for similar compounds based on SMILES in the ChEMBL Database.
+We filter using the following parameters:
+**Tanimoto coefficient:** 40
+**Lipinski's Rule of Five:** Yes
+![lipinski](https://user-images.githubusercontent.com/88226429/130171208-702d7c00-301f-4701-bebe-d29f9cc50ca7.png)
+#### The Compound library created had the following compounds: 
+![compound library](https://user-images.githubusercontent.com/88226429/130171630-46958778-540a-4236-9177-5d382184535d.png)
 
-we have used two tools to generate librairy of compounds 
-frist we need a SMILE notation as reference in oder to get a similar compound. 
-### Compound conversion 
-this tool we have used to convert our ligand which is in pdf as input and we get  SMILE as output   
-### Search ChEMBL database
-once we have SMILE of our ligand now we have used **Search ChEMBL database** 
-so we have given SMILE input type "file", we given Ligand SMILE as input file “Tanimoto cutoff score”: 40  and we have given  “Filter for Lipinski’s Rule of Five”: Yes 
-this used to perform similarity search, with available compound in chEMBL database with referce to our SMILE.
-it used to give output as list of SMILE in file so our library is ready now for next step 
-
+---
 
 ## Preparing files for Docking
 
