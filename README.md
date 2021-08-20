@@ -44,6 +44,8 @@ Slack User_Name | Contribution |
 ◾ [Clustering](#Clustering)\
 ◾ [Post-processing](#Post-processing)\
 ◾ [Visualtion of docking](#Visualisation-of-docking)
+◾ [Tutorial Reference](#Tutorial-Reference)
+◾ [Ak=cknowledgement](#Acknowledgement)
 
 ---
 
@@ -74,9 +76,9 @@ Note that the protein and ligand are bound together
 
 ## Separate protein and ligand
 🛠️**Search in textfiles (grep)** \
-1. To get protein: Remove **HETATM** atoms (HETATM contains ligand atoms, water molecules, ions which are not part of the protein) 
-2. To get ligand: Choose only **CT5** atoms (CT5 denotes the ligand atoms - you can see they come under HETATM atoms)
-\
+🔺 To get protein: Remove **HETATM** atoms (HETATM contains ligand atoms, water molecules, ions which are not part of the protein) 
+🔺 To get ligand: Choose only **CT5** atoms (CT5 denotes the ligand atoms - you can see they come under HETATM atoms)  
+
 🛠️**Compound conversion** \
 To convert Ligand from PDB format to **MOL** format and also to **SMILES** format
 
@@ -95,7 +97,7 @@ We filter using the following parameters \
 
 ---
 
-## Preparing files for Docking
+## Prepare files for Docking
 This involves pre-processing steps to make sure our protein and ligand are in the right format to dock in AutoDock Vina docking tool
 \
 🛠️**Prepare receptor:** \
@@ -118,47 +120,63 @@ We get output in the form of collection of SDF files
 
 ## Visualisation of Compound library
 Do you wish to see how are compound library actually looks like? Here you go, we heard your words! \
-🛠️**Visualization of Compounds** \
+🛠️**Visualization of Compounds:** \
 This tool is based on OpenBabel to visualise the chemical structures of the compounds generated. \
 We input our 'Compound library' file and set parameters depending on how we want to visualise the compounds. In this case, we decide to see the structure of the molecule and display it's molecular weight. We can get the output in SVG or PNG format.
 ![visualisation](https://user-images.githubusercontent.com/88226429/130177042-3337c6e4-f6ec-4ceb-b216-ac8923796d55.png)
 
 ---
 
-## Calculate molecular fingerprints
-
-The ligand SMILES files was labelled using Replace and Concatenate tools which give us 14 molecules with a clear table, the output was renamed as "Labelled compound library"
-
-The labelled compound library was used to do fingerprinting using Babel FP2 fingerprints and it was renamed as "Fingerprints".
+## Calculate Molecular fingerprints
+The molecular fingerprint is a way to describe a molecular structure by converting it into a bit string. Since molecular fingerprint encodes the structure of a molecule, it is a useful method to describe the structural similarity among the molecules as a molecular descriptor. \
+🛠️**Replace:** \
+This tool is used to replace the data format pathway in the Ligand SMILES file to 'Ligand' in title column. This is done for proper ordering and representation of the file in a tabular column. \
+🛠️**Concatenate datasets:** \
+This toll is used to combine our Compound library and ligand file (prepared in previous step) into a single tabular column. Therefore, now our tabular column consists of: \
+**Columns(2):** SMILES and Title (Ligand/ChEMBL ID) \
+**Rows(14):** Primary ligand file (1) + Compound library molecules (13) \
+Now Rename the output file as **'Labelled Compound Library'** \
+🛠️**Molecules to Fingerprints:** \
+Now use the 'Labelled Compound Library' file to create the fingerprints. The type of fingerprint done here is Open Babel FP2 fingerprints.
 
 ---
 
 ## Clustering
-This method can be completed once the molecular fingerprints have been determined.
-For this step, two different tools, Taylor-Butina clustering and NxN clustering, were used to cluster molecules. 
-Taylor-Butina clustering was used to determine the different classification of moelcules into clusters based on the similarity within their structures.
-NxN clustering forms a dendrogram that shows the individual molecules that are represented as vertical lines and merged into clusters.
-The clustering of meolcules can be completed using galaxy and the following steps:
-Taylor-Butina clustering tool with the following parameters:
-param-file “Fingerprint dataset”: ‘Fingerprints’ file.
-param-file “threshold”: 0.8
-NxN Clustering tool with the following parameters:
-param-file “Fingerprint dataset”: ‘Fingerprints’ file.
-param-file “threshold”: 0.0
-param-file “Format of the resulting picture”: SVG
-param-file “Output options”: Image
-![download](https://user-images.githubusercontent.com/88290959/129894215-48c2fd25-65ae-44bf-9409-15925f485b0f.jpg)
+Clustering of data forms the basis of many modeling and pattern classification algorithms. The purpose of clustering is to find natural groupings of data in a large data set. In this case, the bitstrings (fingerprints) obtained in previous step is compared using clustering method.  
+🛠️**Taylor-Butina clustering:**  
+Also referred to as Leader clustering, Taylor-Butina clustering is an unsupervised non-hierarchical clustering method that guarantees that every cluster contains molecules which are within a distance cutoff of the central molecule. It provides a classification of the compounds into different groups or clusters, based on their structural similarity.  
+A **threshold** of 0.8 was used and 2 clusters were obtained
+![taylor-butina clustering](https://user-images.githubusercontent.com/88226429/130183032-553dc8b8-2929-48bc-8ec6-6f2f15695169.jpg)  
+🛠️**NxN Clustering:**  
+ NxN clustering shows the clustering in the form of a dendrogram, where individual molecules are represented as vertical lines and merged into clusters. Merges are represented by horizontal lines. The y-axis represents the similarity of data points to each other; thus, the lower a cluster is merged, the more similar the data points are which it contains. Clusters in the dendogram are colored differently. For example, all molecules connected in red are similar enough to be grouped into the same cluster.  
+Output is produced in the form of an image.
+![download](https://user-images.githubusercontent.com/88290959/129894215-48c2fd25-65ae-44bf-9409-15925f485b0f.jpg)  
 
 ---
 
 ##  Post-processing
-
-After the Clustering & Fingerprinting  of the molecules, from our collection of SD-files, we first extract all stored values into tabular format and then combine the files together to create a single tabular file. 
-
-![Screenshot (349)](https://user-images.githubusercontent.com/71928132/129947028-f28cdbd2-6ed6-4a1e-9b49-52465e4a5303.png)
-
-We have a tabular file available now which contains all poses calculated for all ligands docked, together with scores and RMSD values for the deviation of each pose from the optimum. We also have PDB files for some of the docking poses which can be inspected using the NGLViewer visualization embedded in Galaxy.
+As we are dont with Docking, let us now analyse our docking results.  
+🛠️**Extract values from an SD-file:**
+From our collection of SD-files (docking result), we first extract all stored values into tabular format for each of the 13 ligands in the Compound library. The tabular column consists of significant values such Docking score and RMSD values.  
+🛠️**Collapse Collection:**  
+Using this tool we combine all the 13 tables obtained above into one single file. This helps in easier organisation and  visualisation.  
+![Screenshot (349)](https://user-images.githubusercontent.com/71928132/129947028-f28cdbd2-6ed6-4a1e-9b49-52465e4a5303.png)  
+We now have a tabular file which contains all poses calculated for all ligands docked, together with scores and RMSD values for the deviation of each pose from the optimum. 
 
 ---
 
-## Visualisation of Docking
+## Visualisation of Docking  
+🛠️**Compound conversion:**  
+Taking the Sd-files obtained from docking, we convert it to PDB format. This is done so that the docking poses can be inspected during Visualisation.  
+🛠️**Visualisation:**  
+We have used NGLViewer for visualisation of our docking files.  
+![hsp90](https://user-images.githubusercontent.com/88226429/130185591-88ccb726-47ae-4d51-8d06-86a8476b61a3.png)  
+
+---
+
+## Tutorial Reference
+https://galaxyproject.github.io/training-material/topics/computational-chemistry/tutorials/cheminformatics/tutorial.html
+
+## Acknowledgement
+We are grateful to Hackbio as they gave us this wonderful opportunity and let us dive into the ocean of bioinformatics.  
+<h1 align="center">Happy Learning!</h1>
