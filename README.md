@@ -192,7 +192,10 @@ We have used NGLViewer for visualisation of our docking files. The following ima
 
 🛠️**Scatter plot**  
 A scatter plot is a type of plot or mathematical diagram using Cartesian coordinates to display values for typically two variables for a set of data. If the variables are correlated, the points will fall along a line or curve. A scatter plot of RMSD (compared to optimal docking pose) against docking score is calculated below:  
-![scatter plot](https://user-images.githubusercontent.com/88226429/130188979-5254961b-f1f3-48b9-aaf0-79f6f6233672.png)
+![graph](https://user-images.githubusercontent.com/88226429/130319291-de1b27f4-44da-4688-b3ba-2f0c5d8b2fef.png)  
+
+The root mean square deviation (rmsd) between corresponding atoms of two molecules is a commonly used measure of similarity between their structures. It is seen here that a **linear regression plot** has been observed. This proves the fact that lower the RMSD value higher is the docking score accuracy. An example tabel of one molecule (CHEMBL4636678) is attached here:  
+![table](https://user-images.githubusercontent.com/88226429/130319452-d037740a-a3b3-4c1d-b713-ad1d36367d4e.png)
 
 ---
 
